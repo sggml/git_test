@@ -1,0 +1,37 @@
+rv6.html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>리액트 VDOM 템플릿 - 사용자 정의 컴포넌트 만들기 1 실습</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="warp"></div>  
+    <img src = "이미지경로" /> 
+    <script type="text/babel">
+         //실습
+         // MyImage 라는 검포넌트 생성, 속성은 src ="이미지경로" label="설명"
+         // MyImage 컴포넌트는 JSK 속에 img 태그, p태그가 존재한다
+         function MyImage(props) {
+            return(
+                <div>
+                    <img src={props. src}/>
+                    <p>{ props.labael}</p> 
+                    </div>
+            )
+            
+         }
+         let html =
+         <div>
+            <img src = "https://k.kakaocdn.net/dn/y0ufh/btruHx20AJl/BAZ9mSjWGGUwK1RAenvvE0/img.png  "  />    
+            <img src = " https://mblogthumb-phinf.pstatic.net/20131118_182/jewellead_1384742556711pth97_JPEG/Starbucks_New_Logo.jpg?type=w2" />
+        
+            </div>
+        var root = document.querySelector('#warp')        
+        ReactDOM.render( html, root )
+    </script>
+</body>
+</html>

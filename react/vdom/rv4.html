@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+<hrad>
+
+    <meta charset="UTF-8"/> <!--단독 태그-->
+    <title>리액트 VDOM 템플릿 - css3를 JSX에 적용</title>
+     <!-- external 방식 -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</hrad>
+<body>
+    <div id="warp"></div>
+    <script type="text/babel">
+        // css : 레이아웃,디자인,요소 찾기(selector), 키프레임 애니메이션, 반응형웹(mediapipe)
+        // selector : id (문서내에서 고유함)속성의 값을 이용하여 요소 특정하기 => #속성값
+        //             class 값을 이용하여 요소 특정하기 => .속성값
+   function makeJSK() {
+        const css1 = {
+            //글자색 파랑색
+
+            'color':'blue'
+            // react 상에서 css를 직접 기술할때는 -을 제거, 속성명을 이어붙인다(첫글자 대문자)
+            'backgroundColor' :'#ffffoo',
+            'fontSize' : '3em'
+        }
+        return(
+            <div>
+              <p style={css1}>스타일 1</p>
+              <p style={css2}>스타일 2</p>
+              {/*JSX내부에 주석 넣기, 이주석은 랜더링시 생략된다 -> 개발자만 볼수 있는 주석 */}
+              <p>스타일 3</p>
+                </div>
+        )
+        
+        
+   }
+       var root = document.querySelector('#warp')
+                ReacrDom.rende(makeJSX().root)
+    </script>
+</body>
+</html>

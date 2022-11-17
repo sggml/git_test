@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+<hrad>
+
+    <meta charset="UTF-8"/> <!--단독 태그-->
+    <title>리액트 VDOM 템플릿</title>
+     <!-- external 방식 -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</hrad>
+<body>
+    <div id="warp"></div>
+    <!-- js가 html에 포합되는 형태 external, internal, inline-->
+    <script type="text/babel">
+      //화면을 새로 고칠때마다 리액트, 리덕스, 스프링부트 단어들이 랜덤하게 등장한다
+      function makeJSX () {
+        //0~2중에 하나를 랜덤하게 획득
+        const v = Math.floor(Math.random()*3)
+        //3중에 하나를 선택해서 리턴
+        if (condition) {
+          return <p>리액트</p>
+        }
+       else if (condition) {
+        return <p>리덕스</p>
+        }
+        else {
+          return <p>스프링부트</p>
+        }
+
+      }
+       var root = document.querySelector('#warp')
+                ReacrDom.rende(makeJSX().root)
+    </script>
+</body>
+</html>

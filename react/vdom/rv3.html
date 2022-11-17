@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+<hrad>
+
+    <meta charset="UTF-8"/> <!--단독 태그-->
+    <title>리액트 VDOM 템플릿 - JSX값 (변수)세팅</title>
+     <!-- external 방식 -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</hrad>
+<body>
+    <div id="warp"></div>
+    <script type="text/babel">
+   function makeJSK() {
+    const rat = '최고 5.40%'
+    const value = 1000000
+    const bankName = '부산은행'
+    const product ='더(THE) 특판 정기예금'
+         //JSK에서 동적으로 만들어지는 요소에 값을  부여 =>{변수}
+         //속성에 값을 넣을때는 ''혹은""를 넣지않는다
+         // html에서 속성의 값은 '' 혹은 "" 로 감싸서 표현한다
+        return<p bank={rate}> value = {value}
+            {bankName}에서 판매중인 {product}이 1 금융권에서 최금 이자율을 기록했다
+            </p>
+   }
+       var root = document.querySelector('#warp')
+                ReacrDom.rende(makeJSX().root)
+    </script>
+</body>
+</html>
